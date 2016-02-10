@@ -14,7 +14,7 @@ namespace Calculate
         [STAThread]
         static void Main()
         {  
-              ///Hi
+              ///Hi,hi
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Calculator());
