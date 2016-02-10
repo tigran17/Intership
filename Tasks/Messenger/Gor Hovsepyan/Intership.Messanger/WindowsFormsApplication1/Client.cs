@@ -10,7 +10,7 @@ namespace MessangerClient
     class Client
     {
        
-        //I've added Solution to Repository
+        //I've added Solution to Repository//
         List<User> users;
 
         public string Nickname { get; set; }
