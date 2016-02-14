@@ -49,24 +49,23 @@ namespace Intership.Messenger.Server
         public void ReadBytes(byte[] bytes)
         {
 
-
             var messageIdBytes = new byte[8];
-            Array.Copy(bytes, 0, messageIdBytes, 0, 8);
+            Array.Copy(bytes, 0, messageIdBytes, 0 , 8);
             _messageId = BitConverter.ToInt64(messageIdBytes, 0);
 
             var timeStampBytes = new byte[8];
             Array.Copy(bytes, 0, messageIdBytes, messageIdBytes.Length, 8);
-            _timestamp = new DateTime(BitConverter.ToInt64(timeStampBytes, 0));
+            _timestamp = new DateTime (BitConverter.ToInt64(timeStampBytes, 0));
 
             var clientIdBytes = new byte[4];
             Array.Copy(bytes, 0, clientIdBytes, messageIdBytes.Length + timeStampBytes.Length, 4);
             _clientId = BitConverter.ToInt32(clientIdBytes, 0);
 
-            _message = System.Text.Encoding.UTF8.GetString(bytes, messageIdBytes.Length + timeStampBytes.Length + clientIdBytes.Length, bytes.Length - 2 * sizeof(long) - sizeof(int));
-
+            _message = System.Text.Encoding.UTF8.GetString(bytes, messageIdBytes.Length + timeStampBytes.Length + clientIdBytes.Length, bytes.Length - 2*sizeof(long)  - sizeof(int));
+            
         }
 
-
+    
 
 
 
