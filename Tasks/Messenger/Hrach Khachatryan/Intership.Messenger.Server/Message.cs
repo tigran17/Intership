@@ -62,10 +62,10 @@ namespace Intership.Messenger.Server
             _clientId = BitConverter.ToInt32(clientIdBytes, 0);
 
             _message = System.Text.Encoding.UTF8.GetString(bytes, messageIdBytes.Length + timeStampBytes.Length + clientIdBytes.Length, bytes.Length - 2*sizeof(long)  - sizeof(int));
-
+            
         }
 
-    //
+    
 
 
 
